@@ -15,5 +15,12 @@ namespace CovidApp.Data
         }
 
         public DbSet<CovidApp.Models.AccessionRecord> AccessionRecord { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.SeedAccessionStrainRecords();
+        }
+
     }
 }

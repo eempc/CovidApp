@@ -15,7 +15,7 @@ namespace CovidApp.Data
             (
                  new AccessionRecord()
                  {
-                     Id = 0,
+                     Id = -1,
                      AccessionNumber = "MN908947",
                      AccessionVersion = 3,
                      Country = "CN",
@@ -29,7 +29,7 @@ namespace CovidApp.Data
 
                 new AccessionRecord()
                 {
-                    Id = -1,
+                    Id = -2,
                     AccessionNumber = "MN988668",
                     AccessionVersion = 1,
                     Country = "CN",
@@ -43,7 +43,7 @@ namespace CovidApp.Data
 
                 new AccessionRecord()
                 {
-                    Id = -2,
+                    Id = -3,
                     AccessionNumber = "LC528232",
                     AccessionVersion = 1,
                     Country = "JP",
@@ -57,7 +57,7 @@ namespace CovidApp.Data
 
                 new AccessionRecord()
                 {
-                    Id = -3,
+                    Id = -4,
                     AccessionNumber = "MN988713",
                     AccessionVersion = 1,
                     Country = "US",
