@@ -1,0 +1,70 @@
+﻿@page
+@model CovidApp.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AccessionRecord</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccessionRecord.AccessionNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccessionRecord.AccessionNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccessionRecord.AccessionVersion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccessionRecord.AccessionVersion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccessionRecord.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccessionRecord.Country)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccessionRecord.Region)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccessionRecord.Region)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccessionRecord.CollectionDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccessionRecord.CollectionDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccessionRecord.Orf1abSequence)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccessionRecord.Orf1abSequence)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccessionRecord.SurfaceGlycoproteinSequence)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccessionRecord.SurfaceGlycoproteinSequence)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccessionRecord.Orf3aSequence)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccessionRecord.Orf3aSequence)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="AccessionRecord.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

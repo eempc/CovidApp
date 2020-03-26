@@ -1,0 +1,70 @@
+﻿@page
+@model CovidApp.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AccessionRecord</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AccessionRecord.Id" />
+            <div class="form-group">
+                <label asp-for="AccessionRecord.AccessionNumber" class="control-label"></label>
+                <input asp-for="AccessionRecord.AccessionNumber" class="form-control" />
+                <span asp-validation-for="AccessionRecord.AccessionNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccessionRecord.AccessionVersion" class="control-label"></label>
+                <input asp-for="AccessionRecord.AccessionVersion" class="form-control" />
+                <span asp-validation-for="AccessionRecord.AccessionVersion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccessionRecord.Country" class="control-label"></label>
+                <input asp-for="AccessionRecord.Country" class="form-control" />
+                <span asp-validation-for="AccessionRecord.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccessionRecord.Region" class="control-label"></label>
+                <input asp-for="AccessionRecord.Region" class="form-control" />
+                <span asp-validation-for="AccessionRecord.Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccessionRecord.CollectionDate" class="control-label"></label>
+                <input asp-for="AccessionRecord.CollectionDate" class="form-control" />
+                <span asp-validation-for="AccessionRecord.CollectionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccessionRecord.Orf1abSequence" class="control-label"></label>
+                <input asp-for="AccessionRecord.Orf1abSequence" class="form-control" />
+                <span asp-validation-for="AccessionRecord.Orf1abSequence" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccessionRecord.SurfaceGlycoproteinSequence" class="control-label"></label>
+                <input asp-for="AccessionRecord.SurfaceGlycoproteinSequence" class="form-control" />
+                <span asp-validation-for="AccessionRecord.SurfaceGlycoproteinSequence" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccessionRecord.Orf3aSequence" class="control-label"></label>
+                <input asp-for="AccessionRecord.Orf3aSequence" class="form-control" />
+                <span asp-validation-for="AccessionRecord.Orf3aSequence" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

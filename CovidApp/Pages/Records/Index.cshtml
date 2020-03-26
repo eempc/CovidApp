@@ -1,0 +1,78 @@
+﻿@page
+@model CovidApp.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessionRecord[0].AccessionNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessionRecord[0].AccessionVersion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessionRecord[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessionRecord[0].Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessionRecord[0].CollectionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessionRecord[0].Orf1abSequence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessionRecord[0].SurfaceGlycoproteinSequence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessionRecord[0].Orf3aSequence)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AccessionRecord) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessionNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessionVersion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orf1abSequence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurfaceGlycoproteinSequence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orf3aSequence)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
