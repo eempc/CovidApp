@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using CovidApp.Data;
 
 namespace CovidApp.Models
 {
@@ -17,6 +18,14 @@ namespace CovidApp.Models
         [Required]
         public string Country { get; set; }
         public string Region { get; set; }
+        [NotMapped]
+        public Coords Coordinates
+        {
+            get
+            {
+                return CountryCoordinates.countries[Country]; // Requires access to a static class, hmmm
+            }
+        }
         public string CollectionDate { get; set; } // The getter will do a DateTime.TryParse()
         public string Orf1abSequence { get; set; }
         [NotMapped]
@@ -45,6 +54,18 @@ namespace CovidApp.Models
             {
                 return Orf3aSequence.Length;
             }
+        }
+    }
+
+    public struct Coords
+    {
+        public double longitude;
+        public double latitude;
+        
+        public Coords(double longitude, double latitude)
+        {
+            this.longitude = longitude;
+            this.latitude = latitude;           
         }
     }
 }

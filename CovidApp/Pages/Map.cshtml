@@ -3,8 +3,11 @@
 @{
     ViewData["Title"] = "Map";
 }
+@section Styles {
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+}
 
-<h1>Map</h1>
+<h1>Google Geochart Map</h1>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
     google.charts.load('current', {
@@ -50,6 +53,17 @@
 </script>
 
 <div id="regions_div" style="width: 900px; height: 500px;"></div>
+
+<h1>Azure Maps</h1>
+
+<script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+<script type="text/javascript">
+
+ 
+</script>
+
+
+<div id="map"></div>
 
 <h2>Strain Details</h2>
 
